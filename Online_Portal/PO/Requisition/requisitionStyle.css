@@ -1,0 +1,126 @@
+input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+        color: #666666;
+        
+        /*font-size: 12px;*/
+        font-family: "Times New Roman", Times, serif;
+        }
+        #trow{
+        background-color: #046bd1;
+        text-align: center;
+        }
+        thead input {
+        width: 100%;
+        
+        font-size: 15px;
+        box-sizing: border-box;
+        }
+        <style type="text/css">
+        table th,tr, {
+        border: 1px solid #170891;
+        }
+        th{
+        background-color: #170891;
+        color: #ffffff;
+        }
+        tr
+        {
+        
+        font-size: 12px;
+        border-radius: 0px;
+        }
+        .td
+        {
+        border: 1px solid #170891;
+        font-size: 12px;
+        }
+        .form-control , .form-select
+        {
+        border-radius: 0px;
+        font-size: 12px;
+        
+        }
+        /*ul {
+        cursor: pointer;
+        padding: unset;
+        max-height: 250px;
+        overflow: auto;
+        }
+        li {
+        padding: 3px;
+        background-color: #edebe4;
+        }*/
+        .ui-autocomplete {
+        max-height: 180px;
+        overflow: auto;
+        max-width: 400px;
+        overflow-y: auto;
+        font-size: 12px;
+        text-overflow: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        background-color: #9ed8fa;
+        
+        z-index: 2150000000 !important;
+        
+        }
+        .msg_show{
+        font-weight: bolder;
+        font-style: italic;
+        padding: 5px 20px;
+        margin-top: 8px;
+        color: #08732d;
+        }
+        td input[type="text"],input[type="number"]
+        {
+        font-size: 12px;
+        }
+        .largerCheckbox
+        {
+        width: 30px;
+        height: 20px;
+        margin-top: 10px;
+        }
+        .hlight
+        {
+        font-size: 15px;
+        text-align: center;
+        }
+        
+        .checked_check{
+        font-size: 2.2em;
+        color: green;
+        }
+        .not_approve{
+        font-size: 2.5em;
+        color: red;
+        }
+       .mrgn{
+        margin: 1px;
+       }
+       .font1{
+
+            color: brown;
+            font-weight: bold;
+            background-color: #e1e8e3;
+
+       }
+       .forRequisitionHead{
+        background-color: black;
+        font-size: 16px;
+       }
+       .forRequisitionBody{
+        font-size: 14px;
+       }
+       .not_editable{
+            border: 1px solid #999999;
+            background-color: #cccccc;
+            color: #666666;
+       }
+       .text_hide{
+        display: none;
+       }
