@@ -284,9 +284,9 @@
                             <li>
                                 <a href="PO\add_master\showparty.php">Party master</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="PO\add_master\minMax_limit.php">Min/Max Qty Limit</a>
-                            </li> -->
+                            </li>
                             <!-- <li>
                                 <a href="PO\add_master\set_Item_limit.php">Set Item Limit</a>
                             </li>
