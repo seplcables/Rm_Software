@@ -298,10 +298,7 @@
                             </li>
                             <li>
                                 <a href="PO\add_master\project_master.php">Project_master</a>
-                            </li>
-                            <li>
-                                <a href="PO\add_master\subproject_master.php">Sub Project_master</a>
-                            </li>
+                            </li>                            
                         </ul>
                     </li>
                 </ul>
