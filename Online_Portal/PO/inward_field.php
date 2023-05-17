@@ -498,7 +498,7 @@ if (!isset($_SESSION['pur_user'])) {
 								<input type="hidden" name="gst_amt[]" class="gst_amt" id="gst_amt" value="0">
 							</td>
 							<td><input type="number" step="0.01" name="tcs_amt[]" id="tcs_amt" class="tcs_amt"  autocomplete="off"></td>
-							<td><input type="text" name="project[]" id="project"></td>
+							<td><input type="text" name="project[]" id="project"><input type="hidden" name="sub_project[]" id="sub_project"></td>
 							<td><input type="text" name="job[]" id="job"></td>
 							<td><input type="text" name="remark1[]" id="remark1"></td>
 							<td><input type="text" name="total_amt[]" id="total_amt" value="0" class="total_amt" readonly></td>
@@ -597,7 +597,7 @@ if (!isset($_SESSION['pur_user'])) {
 				    /*rowHtm5 += '<td><input type="text" name="gst" id="'+rst+'gst" class="gst" value="'+gst+'"></td>';*/
 
 				     rowHtm5 += '<td><input type="number" step="0.01" name="tcs_amt[]" id="'+rst+'tcs_amt" class="tcs_amt" autocomplete="off"></td>';
-				    rowHtm5 += '<td><input type="text" name="project[]" id="'+rst+'project"></td>';
+				    rowHtm5 += '<td><input type="text" name="project[]" id="'+rst+'project"><input type="hidden" name="sub_project[]" id="'+rst+'sub_project"></td>';
 				    rowHtm5 += '<td><input type="text" name="job[]" id="'+rst+'job"></td>';
 				    rowHtm5 += '<td><input type="text" name="remark1[]" id="'+rst+'remark1"></td>';
 				    rowHtm5 += '<td><input type="text" name="total_amt[]" id="'+rst+'total_amt" class="total_amt" value="0" readonly></td>';
@@ -1131,7 +1131,7 @@ if (!isset($_SESSION['pur_user'])) {
        		}
        });
 
-       $( "#projecti" ).autocomplete
+       $( "#project" ).autocomplete
 	  ({
 	    source: function( request, response ) {
 	      
@@ -1154,7 +1154,7 @@ if (!isset($_SESSION['pur_user'])) {
 	    select: function (event, ui)
 	    {
 	      // Set selection
-	        $('#projecti').val(ui.item.label);
+	        $('#project').val(ui.item.label);
 	        return false;
 	      },
 	    change: function (event, ui)  //if not selected from Suggestion

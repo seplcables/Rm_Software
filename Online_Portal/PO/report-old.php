@@ -137,6 +137,7 @@ text-align: center;
                         <th>Item Description</th>
                         <th>plant</th>
                         <th>Project</th>
+                        <th>Sub_Project</th>
                         <th>Job No</th>
                         <th>Remarks</th>
                         <th>PKG</th>
@@ -154,7 +155,7 @@ text-align: center;
                         <th>Department</th>
                         <th>Plant</th>
                         <th>PO_project</th>
-                        <th>Sub_project</th>
+                        <th>PO_Sub_project</th>
                         <th>Type</th>
                         <th>OLD Part Status</th>
                     </tr>
@@ -176,6 +177,7 @@ text-align: center;
                         <th>Item Description</th>
                         <th>plant</th>
                         <th>Project</th>
+                        <th>Sub_Project</th>
                         <th>Job No</th>
                         <th>Remarks</th>
                         <th>PKG</th>
@@ -193,7 +195,7 @@ text-align: center;
                         <th>Department</th>
                         <th>Plant</th>
                         <th>PO_project</th>
-                        <th>Sub_project</th>
+                        <th>PO_Sub_project</th>
                         <th>Type</th>
                         <th>OLD Part Status</th>
                     </tr>
@@ -259,6 +261,7 @@ text-align: center;
                 { data: "item" },
                 { data: "plant" },
                 { data: "p_project" },
+                { data: "sub_project" },
                 { data: "p_job" },
                 { data: "p_remark" },
                 { data: "p_pkg" },

@@ -5,7 +5,7 @@ include('../../dbcon.php');
 if (isset($_POST["po"])) 
 {
     $no = 1;
-    $sql = "SELECT a.id,a.iid,a.item_code,a.project,a.job,a.remark,a.pkg,a.qnty,a.unit,a.plant,a.rate,b.item,b.c_code, a.make_by, a.model_no from po_entry_details a 
+    $sql = "SELECT a.id,a.iid,a.item_code,a.project,a.sub_project,a.job,a.remark,a.pkg,a.qnty,a.unit,a.plant,a.rate,b.item,b.c_code, a.make_by, a.model_no from po_entry_details a 
 			left outer join rm_item b on a.item_code = b.i_code where a.iid = '".$_POST["po"]."' AND a.iid > 0";
     $run = sqlsrv_query($con, $sql);
     $output = '';
@@ -90,7 +90,9 @@ if (isset($_POST["po"]))
 								<input type="hidden" name="gst_amt[]" class="gst_amt" id="gst_amt" value="0">
 							</td>
 							<td><input type="text" name="tcs_amt[]" id="tcs_amt" class="tcs_amt"></td>
-							<td><input type="text" name="project[]" id="project" value="'.$row['project'].'"></td>
+							<td><input type="text" name="project[]" id="project" value="'.$row['project'].'">
+								<input type="hidden" name="sub_project[]" id="sub_project" value="'.$row['sub_project'].'">
+							</td>
 							<td><input type="text" name="job[]" id="job" value="'.$row['job'].'"></td>
 							<td><input type="text" name="remark1[]" id="remark1" value="'.$row['remark'].'"></td>
 							<td><input type="text" name="total_amt[]" id="total_amt" value="'.$row['rate']*$y.'" class="total_amt" readonly></td>
@@ -100,3 +102,42 @@ if (isset($_POST["po"]))
     }
     echo $output;
 }
+?>
+<script type="text/javascript">
+	 $( "#project" ).autocomplete
+	  ({
+	    source: function( request, response ) {
+	      
+	    // Fetch data
+	      $.ajax({
+	            url: "fetchProject.php?status=1",
+	            type: 'post',
+	            dataType: "json",
+	            data: {
+	            project: request.term,
+	            
+	          },
+	          success: function( data ) 
+	          {
+	            response( data );
+	            console.log(data);
+	          }
+	      });
+	    },
+	    select: function (event, ui)
+	    {
+	      // Set selection
+	        $('#project').val(ui.item.label);
+	        return false;
+	      },
+	    change: function (event, ui)  //if not selected from Suggestion
+	    {
+	        // if (ui.item == null)
+	        // {
+	        //   $(this).val('');
+	        //   $(this).focus();
+	        // }
+	      }
+	      //end project
+	});
+</script>
