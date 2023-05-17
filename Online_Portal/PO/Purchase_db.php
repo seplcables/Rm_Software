@@ -42,6 +42,7 @@ if (isset($_POST['saveAsExit']) || isset($_POST['saveAsNew'])) {
     $gst_amt = $_POST['gst_amt'];
     $tcs_amt = $_POST['tcs_amt'];
     $project = $_POST['project'];
+    $sub_project = $_POST['sub_project'];
     $job = $_POST['job'];
     $remark1 = $_POST['remark1'];
     $total_amt = $_POST['total_amt'];
