@@ -24,7 +24,7 @@ include('..\..\dbcon.php');
     <style type="text/css">
         ::-webkit-input-placeholder { /* Edge */
                 color: #b3b3cc;
-                /*font-style: italic;*/
+                font-style: italic;
                 /*font-size: 12px;*/
                 font-family: "Times New Roman", Times, serif;
             }
