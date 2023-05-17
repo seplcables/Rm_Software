@@ -272,7 +272,7 @@
                         </ul>
                     </li>
 
-                    <li class="">
+                     <li class="">
                         <a href="#master" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <i class="fas fa-cog"></i>
                             Master
@@ -284,9 +284,9 @@
                             <li>
                                 <a href="PO\add_master\showparty.php">Party master</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="PO\add_master\minMax_limit.php">Min/Max Qty Limit</a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="PO\add_master\set_Item_limit.php">Set Item Limit</a>
                             </li>
@@ -300,10 +300,10 @@
                                 <a href="PO\add_master\project_master.php">Project_master</a>
                             </li>
                             <li>
-                                <a href="PO\add_master\subproject_master.php">Sub Project_master</a>
+                                <a href="PO\add_master\sub_master.php">Sub Project Master</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>  
                 </ul>
 
             </nav>

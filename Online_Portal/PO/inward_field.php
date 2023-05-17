@@ -253,7 +253,6 @@ if (!isset($_SESSION['pur_user'])) {
 			<button class="float-end btn btn-light px-4" id="back"><b>Back</b></button>
 			<button class="float-end btn btn-light px-4" id="save" name="saveAsNew" value="saveAsNew" form="form"><b>Save As New</b></button>
 			<button class="float-end btn btn-light px-4" id="save" value="saveAsExit" name="saveAsExit" form="form"><b>Save As Exit</b></button>
-		
 		</div>	
 	</div><br>
 	<div class="container-fluid">
@@ -499,7 +498,7 @@ if (!isset($_SESSION['pur_user'])) {
 								<input type="hidden" name="gst_amt[]" class="gst_amt" id="gst_amt" value="0">
 							</td>
 							<td><input type="number" step="0.01" name="tcs_amt[]" id="tcs_amt" class="tcs_amt"  autocomplete="off"></td>
-							<td><input type="text" name="project[]" id="project"></td>
+							<td><input type="text" name="project[]" id="project"><input type="hidden" name="sub_project[]" id="sub_project"></td>
 							<td><input type="text" name="job[]" id="job"></td>
 							<td><input type="text" name="remark1[]" id="remark1"></td>
 							<td><input type="text" name="total_amt[]" id="total_amt" value="0" class="total_amt" readonly></td>
@@ -598,7 +597,7 @@ if (!isset($_SESSION['pur_user'])) {
 				    /*rowHtm5 += '<td><input type="text" name="gst" id="'+rst+'gst" class="gst" value="'+gst+'"></td>';*/
 
 				     rowHtm5 += '<td><input type="number" step="0.01" name="tcs_amt[]" id="'+rst+'tcs_amt" class="tcs_amt" autocomplete="off"></td>';
-				    rowHtm5 += '<td><input type="text" name="project[]" id="'+rst+'project"></td>';
+				    rowHtm5 += '<td><input type="text" name="project[]" id="'+rst+'project"><input type="hidden" name="sub_project[]" id="'+rst+'sub_project"></td>';
 				    rowHtm5 += '<td><input type="text" name="job[]" id="'+rst+'job"></td>';
 				    rowHtm5 += '<td><input type="text" name="remark1[]" id="'+rst+'remark1"></td>';
 				    rowHtm5 += '<td><input type="text" name="total_amt[]" id="'+rst+'total_amt" class="total_amt" value="0" readonly></td>';
@@ -815,7 +814,8 @@ if (!isset($_SESSION['pur_user'])) {
 		    data: {
 		     po: request.term
 		    },
-		    success: function( data ) {
+		    success: function( data ) 
+		    {
 		     response( data );
 		    }
 		   });
@@ -1130,6 +1130,43 @@ if (!isset($_SESSION['pur_user'])) {
        			return false;
        		}
        });
+
+       $( "#project" ).autocomplete
+	  ({
+	    source: function( request, response ) {
+	      
+	    // Fetch data
+	      $.ajax({
+	            url: "fetchProject.php?status=1",
+	            type: 'post',
+	            dataType: "json",
+	            data: {
+	            project: request.term,
+	            
+	          },
+	          success: function( data ) 
+	          {
+	            response( data );
+	            console.log(data);
+	          }
+	      });
+	    },
+	    select: function (event, ui)
+	    {
+	      // Set selection
+	        $('#project').val(ui.item.label);
+	        return false;
+	      },
+	    change: function (event, ui)  //if not selected from Suggestion
+	    {
+	        // if (ui.item == null)
+	        // {
+	        //   $(this).val('');
+	        //   $(this).focus();
+	        // }
+	      }
+	      //end project
+	});
     </script>
 </body>
 </html>
