@@ -253,7 +253,6 @@ if (!isset($_SESSION['pur_user'])) {
 			<button class="float-end btn btn-light px-4" id="back"><b>Back</b></button>
 			<button class="float-end btn btn-light px-4" id="save" name="saveAsNew" value="saveAsNew" form="form"><b>Save As New</b></button>
 			<button class="float-end btn btn-light px-4" id="save" value="saveAsExit" name="saveAsExit" form="form"><b>Save As Exit</b></button>
-		
 		</div>	
 	</div><br>
 	<div class="container-fluid">
@@ -815,7 +814,8 @@ if (!isset($_SESSION['pur_user'])) {
 		    data: {
 		     po: request.term
 		    },
-		    success: function( data ) {
+		    success: function( data ) 
+		    {
 		     response( data );
 		    }
 		   });
@@ -1130,6 +1130,43 @@ if (!isset($_SESSION['pur_user'])) {
        			return false;
        		}
        });
+
+       $( "#projecti" ).autocomplete
+	  ({
+	    source: function( request, response ) {
+	      
+	    // Fetch data
+	      $.ajax({
+	            url: "fetchProject.php?status=1",
+	            type: 'post',
+	            dataType: "json",
+	            data: {
+	            project: request.term,
+	            
+	          },
+	          success: function( data ) 
+	          {
+	            response( data );
+	            console.log(data);
+	          }
+	      });
+	    },
+	    select: function (event, ui)
+	    {
+	      // Set selection
+	        $('#projecti').val(ui.item.label);
+	        return false;
+	      },
+	    change: function (event, ui)  //if not selected from Suggestion
+	    {
+	        // if (ui.item == null)
+	        // {
+	        //   $(this).val('');
+	        //   $(this).focus();
+	        // }
+	      }
+	      //end project
+	});
     </script>
 </body>
 </html>

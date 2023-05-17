@@ -2,13 +2,15 @@
 
 //filter.php
 include('../../dbcon.php');
-if (isset($_POST["po"])) {
+if (isset($_POST["po"])) 
+{
     $no = 1;
     $sql = "SELECT a.id,a.iid,a.item_code,a.project,a.job,a.remark,a.pkg,a.qnty,a.unit,a.plant,a.rate,b.item,b.c_code, a.make_by, a.model_no from po_entry_details a 
 			left outer join rm_item b on a.item_code = b.i_code where a.iid = '".$_POST["po"]."' AND a.iid > 0";
     $run = sqlsrv_query($con, $sql);
     $output = '';
-    while ($row = sqlsrv_fetch_array($run, SQLSRV_FETCH_ASSOC)) {
+    while ($row = sqlsrv_fetch_array($run, SQLSRV_FETCH_ASSOC)) 
+    {
         $sql12="SELECT SUM(rec_qnty) as qnty_value FROM inward_ind where iid='".$row['id']."'";
         $run12=sqlsrv_query($con, $sql12);
         $row12=sqlsrv_fetch_array($run12, SQLSRV_FETCH_ASSOC);
