@@ -486,7 +486,7 @@ include('..\..\dbcon.php');
 								<input type="hidden" name="gst_amt[]" class="gst_amt" id="gst_amt" value="<?php echo $row1['gst_amt'] ?>">
 							</td>
 							<td><input type="number" step="0.01" name="tcs_amt[]" id="tcs_amt" class="tcs_amt" autocomplete="off" value="<?php echo $row1['tcs_amt'] ?>"></td>
-							<td><input type="text" name="project[]" id="project" value="<?php echo $row1['p_project'] ?>"></td>
+							<td><input type="text" name="project[]" id="project" value="<?php echo $row1['p_project'] ?>"><input type="hidden" name="sub_project[]" id="sub_project"></td>
 							<td><input type="text" name="job[]" id="job" value="<?php echo $row1['p_job'] ?>"></td>
 							<td><input type="text" name="remark1[]" id="remark1" value="<?php echo $row1['p_remark'] ?>"></td>
 							<td><input type="text" name="total_amt[]" id="total_amt" class="total_amt" readonly value="<?php echo $row1['total_amt'] ?>"></td>
